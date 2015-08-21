@@ -1,0 +1,71 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>Drunkard's favourite</title>
+<link rel="stylesheet" href="../css/styles.css" />
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+</head>
+
+<body>
+
+<div id="header">
+    <span class="title">Drunkard's Choice</span>
+</div>
+
+<div id="sidebar"></div>
+
+<div id="content">
+<h2>Welcome to Drunkard's Home</h2>
+<p>
+Are you a wine lover? Browse your favourite Wines.
+</p>
+</div>
+
+<!-- These are templates loaded -->
+<script type="text/template" id="tpl-header">
+	<button class="new btn btn-primary">New Wine</button>
+</script>
+
+<script type="text/template" id="tpl-wine-list-item">
+	<a href='#wines/<%= id %>'><%= name %></a>
+</script>
+
+<script type="text/template" id="tpl-wine-details">
+<div class="container">
+    <div class="col-md-3">
+        <label>Id:</label>
+        <input type="text" id="wineId" class="form-control" name="id" value="<%= id %>" disabled />
+        <label>Name:</label>
+        <input type="text" id="name" class="form-control" ="name" value="<%= name %>" required/>
+        <label>Grapes:</label>
+        <input type="text" id="grapes" class="form-control" name="grapes" value="<%= grapes %>"/>
+        <label>Country:</label>
+        <input type="text" id="country" class="form-control" name="country" value="<%= country %>"/>
+        <label>Region:</label>
+        <input type="text" id="region" class="form-control" name="region"  value="<%= region %>"/>
+        <label>Year:</label>
+        <input type="text" id="year" class="form-control" name="year"  value="<%= year %>"/><br />
+        <button class="save btn-primary">Save</button>
+        <button class="delete btn-danger">Delete</button>
+    </div>
+  
+    <div class="col-md-9">
+        <img height="300" src="../pics/<%= picture %>"/>
+		<br />
+        <label>Description:</label>
+		<br />
+        <textarea id="description" name="description"><%= description %></textarea>
+    </div>
+	</div>
+
+</script>
+
+<!-- JavaScript -->
+<script src="../lib/jquery-1.7.1.min.js"></script>
+<script src="../lib/underscore-min.js"></script>
+<script src="../lib/backbone-min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+<script src="js/main.js"></script>   
+
+</body>
+</html>
